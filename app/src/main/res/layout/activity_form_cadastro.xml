@@ -20,45 +20,45 @@
         app:layout_constraintTop_toTopOf="parent"
         />
     <View
-        android:id="@+id/container_components_cadastro"
         style="@style/ContainerComponents"
+        android:id="@+id/container_components_cadastro"
         app:layout_constraintTop_toBottomOf="@id/title_cadastro"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
     <EditText
+        style="@style/edit_text"
         android:id="@+id/edit_nome"
         android:hint="nome"
         android:inputType="text"
-        style="@style/edit_text"
         app:layout_constraintTop_toTopOf="@id/container_components_cadastro"
         app:layout_constraintStart_toStartOf="@id/container_components_cadastro"
         app:layout_constraintEnd_toEndOf="@id/container_components_cadastro"
         />
     <EditText
+        style="@style/edit_text"
         android:id="@+id/edit_email"
         android:hint="E-mail"
         android:inputType="textEmailAddress"
         android:drawableRight="@drawable/ic_eye"
-        style="@style/edit_text"
         app:layout_constraintTop_toBottomOf="@id/edit_nome"
         app:layout_constraintStart_toStartOf="@id/container_components_cadastro"
         app:layout_constraintEnd_toEndOf="@id/container_components_cadastro"
         />
     <EditText
+        style="@style/edit_text"
         android:id="@+id/edit_password"
         android:hint="senha"
         android:inputType="numberPassword"
         android:drawableRight="@drawable/ic_email"
-        style="@style/edit_text"
         app:layout_constraintTop_toBottomOf="@id/edit_email"
         app:layout_constraintStart_toStartOf="@id/container_components_cadastro"
         app:layout_constraintEnd_toEndOf="@id/container_components_cadastro"
         />
     <androidx.appcompat.widget.AppCompatButton
+        style="@style/button"
         android:layout_marginTop="30dp"
         android:text="@string/cadastrar"
-        style="@style/button"
         app:layout_constraintTop_toBottomOf="@id/container_components_cadastro"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
