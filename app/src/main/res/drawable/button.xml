@@ -2,8 +2,8 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <corners android:radius="30dp"/>
     <gradient
-        android:startColor="@color/pink"
-        android:centerColor="@color/weak_pink"
+        android:startColor="@color/weak_pink"
+        android:centerColor="@color/pink"
         android:endColor="@color/orange"
         android:angle="180"
         />
