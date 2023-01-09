@@ -56,6 +56,7 @@
         app:layout_constraintEnd_toEndOf="@id/container_components_cadastro"
         />
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_register"
         style="@style/button"
         android:layout_marginTop="30dp"
         android:text="@string/cadastrar"
