@@ -1,4 +1,4 @@
-package com.example.firebase.register;
+package com.example.firebase.front.register;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,7 +19,7 @@ public class FormCadastro extends AppCompatActivity implements Initialization {
     private EditText edit_name, edit_email, edit_password;
     private Button button_register;
     private ActivityFormCadastroBinding bind;
-    Pair<String, String> messages = new Pair<>("Preencha todos os campos", "Cadastro realizado com sucesso");
+    private Pair<String, String> messages = new Pair<>("Preencha todos os campos", "Cadastro realizado com sucesso");
     private View messageView;
     private View view;
     @Override protected void onCreate(Bundle savedInstanceState) {

@@ -1,4 +1,4 @@
-package com.example.firebase.home;
+package com.example.firebase.front.home;
 
 import androidx.appcompat.app.AppCompatActivity;
 
