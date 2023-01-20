@@ -1,8 +1,10 @@
 package com.example.firebase.front.register;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
@@ -12,8 +14,18 @@ import com.example.firebase.databinding.ActivityFormCadastroBinding;
 import com.example.firebase.utils.HideKeyboardTouchListener;
 import com.example.firebase.utils.Initialization;
 import com.example.firebase.utils.ShowingSnackBar;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class FormCadastro extends AppCompatActivity implements Initialization {
     private EditText edit_name, edit_email, edit_password;
@@ -57,21 +69,34 @@ public class FormCadastro extends AppCompatActivity implements Initialization {
             email, password
         ).addOnCompleteListener(
             task -> {
-            button_register.setEnabled(true);
+                button_register.setEnabled(true);
                 if (task.isSuccessful()) {
+                    saveUserData();
                     ShowingSnackBar.show(messageView, messages.second);
                 } else {
                     Exception exception = task.getException();
                     if (exception instanceof FirebaseAuthException) {
                         String errorCode = ((FirebaseAuthException) exception).getErrorCode();
-                        String errorMessage = errorCode.equals("ERROR_EMAIL_ALREADY_IN_USE")?
-                                "E-mail já está em uso" : "Erro ao criar usuário: " + errorCode;
-                        ShowingSnackBar.show(messageView, errorMessage);
+                        ShowingSnackBar.show(messageView, "ERROR: " + errorCode.toLowerCase());
                     }
                 }
             }
         );
     }
+    private void saveUserData() {
+        String name = edit_name.getText().toString();
+
+        FirebaseFirestore dragonBall = FirebaseFirestore.getInstance();
+        Map<String, Object> users = new HashMap<>();
+        users.put("nome", name);
+        String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DocumentReference documentReference = dragonBall.collection(
+                "Users"
+        ).document(userID);
+        documentReference.set(users).addOnSuccessListener(
+            unused -> Log.d(this.getClass().getName(), "Success on saving data")
+        ).addOnFailureListener(
+            error -> Log.d(this.getClass().getName(), "Error on saving data: " + error)
+        );
+    }
 }
-
-
