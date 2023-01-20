@@ -7,7 +7,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     >
     <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -37,37 +36,40 @@
         <EditText
             style="@style/edit_text"
             android:id="@+id/edit_nome"
-            android:hint="nome"
+            android:hint="@string/register__name__hint"
             android:inputType="text"
             app:layout_constraintTop_toTopOf="@id/container_components_cadastro"
             app:layout_constraintStart_toStartOf="@id/container_components_cadastro"
             app:layout_constraintEnd_toEndOf="@id/container_components_cadastro"
+            android:autofillHints=""
             />
         <EditText
             style="@style/edit_text"
             android:id="@+id/edit_email"
-            android:hint="E-mail"
+            android:hint="@string/register_email_hint"
             android:inputType="textEmailAddress"
-            android:drawableRight="@drawable/ic_eye"
+            android:drawableEnd="@drawable/ic_eye"
             app:layout_constraintTop_toBottomOf="@id/edit_nome"
             app:layout_constraintStart_toStartOf="@id/container_components_cadastro"
             app:layout_constraintEnd_toEndOf="@id/container_components_cadastro"
+            android:autofillHints=""
             />
         <EditText
             style="@style/edit_text"
             android:id="@+id/edit_password"
-            android:hint="senha"
+            android:hint="@string/register_password_hint"
             android:inputType="numberPassword"
-            android:drawableRight="@drawable/ic_email"
+            android:drawableEnd="@drawable/ic_email"
             app:layout_constraintTop_toBottomOf="@id/edit_email"
             app:layout_constraintStart_toStartOf="@id/container_components_cadastro"
             app:layout_constraintEnd_toEndOf="@id/container_components_cadastro"
+            android:autofillHints=""
             />
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_register"
             style="@style/button"
             android:layout_marginTop="30dp"
-            android:text="@string/cadastrar"
+            android:text="@string/register_button_text"
             app:layout_constraintTop_toBottomOf="@id/container_components_cadastro"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
