@@ -85,6 +85,7 @@ public class FormCadastro extends AppCompatActivity implements Initialization {
     }
     private void saveUserData() {
         String name = edit_name.getText().toString();
+
         FirebaseFirestore dragonBall = FirebaseFirestore.getInstance();
         Map<String, Object> users = new HashMap<>();
         users.put("nome", name);
