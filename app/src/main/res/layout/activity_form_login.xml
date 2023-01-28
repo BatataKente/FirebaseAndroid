@@ -20,6 +20,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/login_image_descripton"
             />
         <View
             style="@style/ContainerComponents"
@@ -31,26 +32,28 @@
         <EditText
             style="@style/edit_text"
             android:id="@+id/edit_email"
-            android:hint="E-mail"
-            android:drawableRight="@drawable/ic_email"
+            android:hint="@string/login_email_hint"
+            android:drawableEnd="@drawable/ic_email"
             android:inputType="textEmailAddress"
             app:layout_constraintStart_toStartOf="@id/container_components"
             app:layout_constraintEnd_toEndOf="@id/container_components"
             app:layout_constraintTop_toTopOf="@id/container_components"
+            android:autofillHints="@string/login_email_hint"
             />
         <EditText
             style="@style/edit_text"
             android:id="@+id/edit_senha"
-            android:hint="Password"
-            android:drawableRight="@drawable/ic_eye"
+            android:hint="@string/login_password_hint"
+            android:drawableEnd="@drawable/ic_eye"
             android:inputType="numberPassword"
             app:layout_constraintStart_toStartOf="@id/container_components"
             app:layout_constraintEnd_toEndOf="@id/container_components"
             app:layout_constraintTop_toBottomOf="@id/edit_email"
+            android:autofillHints="@string/login_password_hint"
             />
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/botao_entrar"
-            android:text="@string/entrar"
+            android:text="@string/login_button_title"
             style="@style/button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

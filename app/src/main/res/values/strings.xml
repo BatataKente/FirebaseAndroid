@@ -1,8 +1,14 @@
 <resources>
     <string name="app_name">Firebase</string>
-    <string name="entrar">Entrar</string>
+    <string name="login_button_title">Entrar</string>
     <string name="text_cadastro">Crie uma conta clicando aqui</string>
     <string name="title_cadastro">cadastre-se</string>
-    <string name="cadastrar">Cadastrar</string>
+    <string name="register_button_text">Cadastrar</string>
     <string name="more_options">Mais Opções</string>
+    <string name="login_email_hint">E-mail</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_image_descripton">Madruguinha</string>
+    <string name="register__name__hint">nome</string>
+    <string name="register_email_hint">E-mail</string>
+    <string name="register_password_hint">senha</string>
 </resources>
